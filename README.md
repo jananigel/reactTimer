@@ -48,7 +48,7 @@
 
 2. set scripts tag in package.json:
     >       "script": {
-    >           "start": "webpack-dev-server --config ./webpack.config.js --mode development"
+    >           "start": "webpack-dev-server --config ./webpack.config.js --mode development", (impelement the command of npm run start and enter the url of http://localhost:8080 will show the app and auto refresh when files change)
     >           "build": "webpack --mode development"
     >       }
 
@@ -64,3 +64,54 @@
     >               filename: 'bundle.js'
     >           },
     >           devServer: { contentBase: './dist' }
+    >       }
+
+## [Install Babel]
+
+1. npm install --save-dev @babel/core @babel/preset-env
+2. npm install --save-dev babel-loader
+3. npm install --dave-dev @babel/preset-react
+4. open and modify webpack.config.js:
+    >       module.exports = {
+    >           module: {
+    >               rules: [
+    >                   {
+    >                       test: /\.(js|jsx)$/,
+    >                       exclude: /node_modules/,
+    >                       use: ['babel-loader']
+    >                   }
+    >               ]
+    >           },
+    >           resolve: {
+    >               extensions: ['*', '.js', '.jsx']
+    >           }
+    >       }
+5. create a configure file(.babelrc) for babel under root:
+    touch .babelrc
+6. open and edit .babelrc:
+    >       {
+    >           "presets": [
+    >               "@babel/preset-env",
+    >               "@babel/preset-react"
+    >           ]
+    >       }
+
+## [Install css loader]
+
+1. npm install --save-dev style-loader css-loader
+2. configure in webpack.config.js:
+    >       module: {
+    >           {
+    >               test: /\.css$/
+    >               loader: 'style-loader!css-loader'
+    >           }
+    >       },
+    >       resolve: {
+    >           extensions: ['.css']
+    >       }
+3. import the css in your component(*.js, *.jsx):
+    > import './styles.css'
+
+*****
+command line: npm run start
+enjoy it!

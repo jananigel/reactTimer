@@ -7,8 +7,8 @@ import TimerClock from './component/timer';
 
 
 
-setInterval(() => {
+// setInterval(() => {
     ReactDOM.render(<TimerClock date={new Date()} />, document.getElementById('app'));
-}, 1000);
+// }, 1000);
 
 

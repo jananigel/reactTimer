@@ -3,6 +3,22 @@
     justify-content: center;
     height: 100vh;
     align-items: center;
+    flex-direction: column;
+}
+
+.control > button {
+    background: white;
+    border: 1px solid #c9c9c9;
+    padding: .2rem .5rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.pause::after {
+    content: 'Pause'
+}
+.continue::after {
+    content: 'Continue'
 }
 
 h2 {

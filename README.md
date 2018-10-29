@@ -1,5 +1,5 @@
 # React environment with React 16 & Babel 7 & Webpack 4 [201810]
-***
+
 ## [Install React]
 
 1. create your project: mkdir reactApp(project name/folder name) && cd reactApp
@@ -41,3 +41,26 @@
     >           /node_modules
     >           -.gitignore
     >           -package.json
+
+## [Install Webpack]
+
+1. npm install --save-dev webpack webpack-dev-server webpack-cli
+
+2. set scripts tag in package.json:
+    >       "script": {
+    >           "start": "webpack-dev-server --config ./webpack.config.js --mode development"
+    >           "build": "webpack --mode development"
+    >       }
+
+3. create the configure file of webpack:
+    touch webpack.config.js
+
+4. webpack config:
+    >       module.exports = {
+    >           entry: './src/app/index.js',
+    >           output: {
+    >               path: __dirname + '/dist',
+    >               publicPath: '/',
+    >               filename: 'bundle.js'
+    >           },
+    >           devServer: { contentBase: './dist' }

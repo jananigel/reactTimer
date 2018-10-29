@@ -22,23 +22,23 @@
 6. create gitignore: touch .gitignore
 
 7. configure the file which on is not upload to git, open .gitignore and edit:
-    >   # dependencies (symbol of # means comment out)
+    >       # dependencies (symbol of # means comment out)
     > /node_module
-    >   # git
+    >       # git
     > .gitignore
     > .git
-    >   # system files
+    >       # system files
     > .DS_Store
     > Thumbs.db
 
 8. the ends of this part, the folder structure will be below:
->   /myReact
->       /.git
->       /src
->           /app
+>       /myReact
+>           /.git
+>           /src
+>               /app
 >               -index.js
->       /dist
->           -index.html
->       /node_modules
->       -.gitignore
->       -package.json
+>           /dist
+>               -index.html
+>           /node_modules
+>           -.gitignore
+>           -package.json
